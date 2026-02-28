@@ -20,6 +20,10 @@ config/icon="res://Sprites/icon.svg"
 EventController="*uid://dw40jc202atga"
 GameController="*uid://7st6fvfdyept"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

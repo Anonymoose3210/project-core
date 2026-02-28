@@ -11,4 +11,4 @@ func game_ended():
 	if total_points > high_score:
 		high_score = total_points
 	total_points = 0
-	get_tree().reload_current_scene()
+	get_tree().reload_current_scene.call_deferred()

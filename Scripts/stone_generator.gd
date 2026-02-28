@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if y_pos - player.position.y < 400:
 		for n in range(RESOURCES_PER_LAYER):
 			x_pos = randi_range(1, 20) * 15

@@ -3,12 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dco0qmdxyt2cm" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://58vk738au2uf" path="res://Sprites/core_tileset.png" id="2_bo1nx"]
 [ext_resource type="Script" uid="uid://dbflvepreacyh" path="res://Scripts/camera.gd" id="3_8gbba"]
-[ext_resource type="PackedScene" uid="uid://y1vhrotqkc32" path="res://Scenes/resources/gold_node.tscn" id="5_6bp64"]
-[ext_resource type="PackedScene" uid="uid://dul5lrx5oj3pe" path="res://Scenes/resources/iron_node.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://52tocwn2kq3r" path="res://Scenes/score_counter.tscn" id="6_21xkr"]
-[ext_resource type="PackedScene" uid="uid://cqtep5v26e8nv" path="res://Scenes/resources/diamond_node.tscn" id="8_hptm8"]
-[ext_resource type="PackedScene" uid="uid://ca5bwx14181sp" path="res://Scenes/resources/emerald_node.tscn" id="9_d1ilt"]
-[ext_resource type="PackedScene" uid="uid://c7q7fmgwihj3r" path="res://Scenes/resources/ruby_node.tscn" id="10_6iyac"]
 [ext_resource type="PackedScene" uid="uid://b0s686dj4334k" path="res://Scenes/world_edge.tscn" id="11_d1ilt"]
 [ext_resource type="Script" uid="uid://bl7fgdok3ejei" path="res://Scripts/stone_generator.gd" id="12_6iyac"]
 
@@ -33,41 +28,14 @@ tile_map_data = PackedByteArray("AAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAACAAUAAAAAAAA
 tile_set = SubResource("TileSet_jjvhh")
 
 [node name="Player" parent="." unique_id=1536310959 instance=ExtResource("1_jjgbg")]
-position = Vector2(164, 62)
+position = Vector2(164, 70)
 
 [node name="Obstacles" type="Node" parent="." unique_id=1992651764]
 
 [node name="Resources" type="Node" parent="." unique_id=585758247]
 
-[node name="Iron Node" parent="Resources" unique_id=819021951 instance=ExtResource("5_kry3j")]
-position = Vector2(169, 281)
-
-[node name="Gold Node" parent="Resources" unique_id=1636818370 instance=ExtResource("5_6bp64")]
-position = Vector2(211, 222)
-
-[node name="Diamond Node" parent="Resources" unique_id=1240254664 instance=ExtResource("8_hptm8")]
-position = Vector2(133, 267)
-
-[node name="Emerald Node" parent="Resources" unique_id=1091648910 instance=ExtResource("9_d1ilt")]
-position = Vector2(120, 321)
-
-[node name="Emerald Node2" parent="Resources" unique_id=664488413 instance=ExtResource("10_6iyac")]
-position = Vector2(206, 337)
-
-[node name="Gold Node2" parent="Resources" unique_id=955491442 instance=ExtResource("5_6bp64")]
-position = Vector2(142, 360)
-
-[node name="Emerald Node3" parent="Resources" unique_id=1654495628 instance=ExtResource("10_6iyac")]
-position = Vector2(168, 424)
-
-[node name="Diamond Node2" parent="Resources" unique_id=1651085906 instance=ExtResource("8_hptm8")]
-position = Vector2(93, 397)
-
-[node name="Emerald Node4" parent="Resources" unique_id=917651662 instance=ExtResource("9_d1ilt")]
-position = Vector2(237, 412)
-
 [node name="Camera2D" type="Camera2D" parent="." unique_id=267041265]
-position = Vector2(164, 62)
+position = Vector2(164, 70)
 offset = Vector2(0, 30)
 zoom = Vector2(3.5, 3.5)
 script = ExtResource("3_8gbba")
@@ -83,6 +51,7 @@ offset_bottom = 123.0
 grow_horizontal = 0
 grow_vertical = 1
 size_flags_horizontal = 8
+metadata/_edit_use_anchors_ = true
 
 [node name="World Edges" type="Node" parent="." unique_id=1041827389]
 
