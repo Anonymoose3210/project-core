@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ca5bwx14181sp" path="res://Scenes/resources/emerald_node.tscn" id="9_d1ilt"]
 [ext_resource type="PackedScene" uid="uid://c7q7fmgwihj3r" path="res://Scenes/resources/ruby_node.tscn" id="10_6iyac"]
 [ext_resource type="PackedScene" uid="uid://b0s686dj4334k" path="res://Scenes/world_edge.tscn" id="11_d1ilt"]
-[ext_resource type="Script" uid="uid://bl7fgdok3ejei" path="res://Scenes/stone_generator.gd" id="12_6iyac"]
+[ext_resource type="Script" uid="uid://bl7fgdok3ejei" path="res://Scripts/stone_generator.gd" id="12_6iyac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gbba"]
 texture = ExtResource("2_bo1nx")
