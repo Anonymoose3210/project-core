@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dul5lrx5oj3pe"]
+
+[ext_resource type="Script" uid="uid://bff8oi1wcwvos" path="res://Scripts/resource.gd" id="1_14vr5"]
+[ext_resource type="Texture2D" uid="uid://bcshtbmudm1eh" path="res://Sprites/ore_iron.png" id="1_w7vq4"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14vr5"]
+radius = 6.0827627
+
+[node name="Iron Node" type="Node2D" unique_id=1636818370]
+script = ExtResource("1_14vr5")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=393629033]
+texture = ExtResource("1_w7vq4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=368289809]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=311204561]
+shape = SubResource("CircleShape2D_14vr5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
