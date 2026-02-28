@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://b0s686dj4334k"]
+
+[ext_resource type="Script" uid="uid://cy3q15ge5hrsd" path="res://Scripts/world_edge.gd" id="1_pt26u"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ecboe"]
+
+[node name="World Edge" type="Area2D" unique_id=1527480973]
+script = ExtResource("1_pt26u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1304035290]
+shape = SubResource("WorldBoundaryShape2D_ecboe")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

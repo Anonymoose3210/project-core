@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ca5bwx14181sp"]
+
+[ext_resource type="Script" uid="uid://bff8oi1wcwvos" path="res://Scripts/resource.gd" id="1_ooe0i"]
+[ext_resource type="Texture2D" uid="uid://qt1fcxrhg25c" path="res://Sprites/ore_emerald.png" id="2_ooe0i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vsvcc"]
+radius = 5.0
+height = 16.0
+
+[node name="Emerald Node" type="Node2D" unique_id=1636818370]
+script = ExtResource("1_ooe0i")
+score_value = 600
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=393629033]
+texture = ExtResource("2_ooe0i")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=368289809]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=311204561]
+shape = SubResource("CapsuleShape2D_vsvcc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

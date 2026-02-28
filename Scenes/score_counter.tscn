@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://52tocwn2kq3r"]
 
-[ext_resource type="Script" uid="uid://ddu84cfn24yi5" path="res://Scenes/score_counter.gd" id="1_0v310"]
+[ext_resource type="Script" uid="uid://ddu84cfn24yi5" path="res://Scripts/score_counter.gd" id="1_0v310"]
 
 [node name="Score Counter" type="Control" unique_id=758179949]
 layout_mode = 3
@@ -16,7 +16,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -40.0
-offset_bottom = 23.0
+offset_left = -18.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 26.0
 grow_horizontal = 0
 text = "0"
+horizontal_alignment = 1
