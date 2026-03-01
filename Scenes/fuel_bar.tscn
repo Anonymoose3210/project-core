@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cch4vq0rt8x6y"]
+
+[ext_resource type="Script" uid="uid://dkefy22ohykk1" path="res://Scenes/fuel_bar.gd" id="1_ommxa"]
+[ext_resource type="Texture2D" uid="uid://dpwjaj54niliy" path="res://Sprites/bar_fuel.png" id="2_nkmx0"]
+
+[node name="Fuel Bar" type="Control" unique_id=1725420361]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ommxa")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=494567973]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 15.0
+offset_right = 143.0
+offset_bottom = 61.0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=127148710]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 146.05263
+offset_bottom = 65.0
+texture = ExtResource("2_nkmx0")

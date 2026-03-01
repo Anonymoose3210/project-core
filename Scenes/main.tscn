@@ -3,10 +3,12 @@
 [ext_resource type="Texture2D" uid="uid://do1rgcet0rdi7" path="res://Sprites/block_dirt.png" id="1_6bp64"]
 [ext_resource type="PackedScene" uid="uid://dco0qmdxyt2cm" path="res://Scenes/player.tscn" id="1_jjgbg"]
 [ext_resource type="Texture2D" uid="uid://58vk738au2uf" path="res://Sprites/core_tileset.png" id="2_bo1nx"]
-[ext_resource type="Script" uid="uid://ctrsq1y2greef" path="res://Scenes/ground.gd" id="2_ynf5e"]
+[ext_resource type="Script" uid="uid://ctrsq1y2greef" path="res://Scripts/ground.gd" id="2_ynf5e"]
 [ext_resource type="Script" uid="uid://dbflvepreacyh" path="res://Scripts/camera.gd" id="3_8gbba"]
 [ext_resource type="Texture2D" uid="uid://ds4woenmicck2" path="res://Sprites/block_grass.png" id="3_hptm8"]
 [ext_resource type="PackedScene" uid="uid://52tocwn2kq3r" path="res://Scenes/score_counter.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://cch4vq0rt8x6y" path="res://Scenes/fuel_bar.tscn" id="9_d1ilt"]
+[ext_resource type="Script" uid="uid://7st6fvfdyept" path="res://Scripts/gameController.gd" id="10_hptm8"]
 [ext_resource type="PackedScene" uid="uid://b0s686dj4334k" path="res://Scenes/world_edge.tscn" id="11_d1ilt"]
 [ext_resource type="Script" uid="uid://bl7fgdok3ejei" path="res://Scripts/stone_generator.gd" id="12_6iyac"]
 
@@ -73,6 +75,9 @@ grow_vertical = 1
 size_flags_horizontal = 8
 metadata/_edit_use_anchors_ = true
 
+[node name="Fuel Bar" parent="Camera2D" unique_id=1725420361 instance=ExtResource("9_d1ilt")]
+visible = false
+
 [node name="World Edges" type="Node" parent="." unique_id=1041827389]
 
 [node name="World Edge" parent="World Edges" unique_id=1527480973 instance=ExtResource("11_d1ilt")]
@@ -82,3 +87,10 @@ rotation = 1.5707964
 [node name="World Edge2" parent="World Edges" unique_id=703464765 instance=ExtResource("11_d1ilt")]
 position = Vector2(329, 76)
 rotation = 4.712389
+
+[node name="GameController" type="Node" parent="." unique_id=1305888786]
+script = ExtResource("10_hptm8")
+
+[node name="Timer" type="Timer" parent="GameController" unique_id=32343914]
+
+[connection signal="timeout" from="GameController/Timer" to="GameController" method="_on_timer_timeout"]
