@@ -8,7 +8,6 @@ func item_collected(item_value: int):
 	EventController.emit_signal("item_collected", total_points)
 
 func game_ended():
-	pass
 	if total_points > high_score:
 		high_score = total_points
 	total_points = 0

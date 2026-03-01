@@ -10,8 +10,13 @@ const EMERALD_ODDS = RUBY_ODDS + 0.2
 const DIAMOND_ODDS = EMERALD_ODDS + 0.2
 const GOLD_ODDS = DIAMOND_ODDS + 0.2
 
-const STONES_PER_LAYER = 2
-const RESOURCES_PER_LAYER = 3
+const DISTANCE_PER_SCALE = 1000
+const STARTING_STONE_COUNT = 2
+const STARTING_RESOURCE_COUNT = 1
+const MAX_STONES = 5
+const MAX_RESOURCES = 6
+var stonesPerLayer = 2
+var resourcesPerLayer = 3
 
 var rock = preload("res://Scenes/rock.tscn")
 var iron = preload("res://Scenes/resources/iron_node.tscn")
@@ -27,14 +32,23 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	
+	# Scales resource amount based on distance travelled
+	if stonesPerLayer < MAX_STONES:
+		stonesPerLayer = player.position.y / DISTANCE_PER_SCALE + STARTING_STONE_COUNT
+	if resourcesPerLayer < MAX_RESOURCES:
+		resourcesPerLayer = player.position.y / DISTANCE_PER_SCALE + STARTING_RESOURCE_COUNT
+	
+	# Generates stones and resources. 
 	if y_pos - player.position.y < 400:
-		for n in range(RESOURCES_PER_LAYER):
-			x_pos = randi_range(1, 20) * 15
+		for n in range(resourcesPerLayer):
+			x_pos = randi_range(1, 21) * 15
 			generate_resource(x_pos, y_pos)
-		for n in range(STONES_PER_LAYER):
-			x_pos = randi_range(1, 20) * 15
+		for n in range(stonesPerLayer):
+			x_pos = randi_range(1, 21) * 15
 			generate_rock(x_pos, y_pos)
 		y_pos += 30
+	
 
 func generate_rock(x_position: int, y_position: int):
 	var rock_instance = rock.instantiate()
