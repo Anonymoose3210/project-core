@@ -1,7 +1,5 @@
 extends Node
 
-@onready var timer: Timer = $Timer
-
 var total_points = 0
 var high_score = 0
 var total_fuel = 10
@@ -16,11 +14,3 @@ func game_ended():
 	total_points = 0
 	get_tree().reload_current_scene.call_deferred()
 	
-
-func fuel_changed(change_amount: int) -> void:
-	#total_fuel += change_amount
-	#if total_fuel <= 0:
-		#game_ended()
-	#else:
-		#EventController.emit_signal("fuel_changed", total_fuel)
-	pass
